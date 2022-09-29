@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95vw;
+    align-items: center;
+}
+
+.tray {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    width: 75vw;
+}
+
+.card {
+    border: solid;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 45vw;
+    height: 20vh;
+    max-height: 25vh;
+}
+
+.card>img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.empty {
+    background-color: none;
+}
+
+.empty img {
+    opacity: 0;
+}
+
+button {
+    background-color: green;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 15px 0;
+    min-width: 40vw;
+    min-height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    letter-spacing: 0.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+button:active {
+    transform: translate(0, 1%);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#reset {
+    background-color: crimson;
+}
+
+
+/* fallback */
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v98/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.mdi {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 650px) {
+    .tray {
+        grid-template-columns: 1fr 1fr;
+    }
+    button {
+        min-width: 15vw;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .tray {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    button {
+        min-width: 15vw;
+        flex-direction: column;
+    }
+}
