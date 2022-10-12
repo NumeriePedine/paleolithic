@@ -51,7 +51,7 @@ button {
     color: #ffffff;
     padding: 15px 0;
     min-width: 40vw;
-    min-height: 5vw;
+    min-height: 5vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -114,7 +114,7 @@ button:active {
         grid-template-rows: 1fr;
     }
     button {
-        min-width: 15vw;
+        min-width: 35vw;
         flex-direction: column;
     }
 }
