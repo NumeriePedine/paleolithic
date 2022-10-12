@@ -6,10 +6,11 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 95vw;
     align-items: center;
+    gap: 1em;
 }
 
 .tray {
@@ -17,6 +18,7 @@ body {
     grid-template-columns: 1fr;
     gap: 1em;
     width: 75vw;
+    justify-items: center;
 }
 
 .card {
