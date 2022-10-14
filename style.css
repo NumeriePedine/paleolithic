@@ -47,8 +47,8 @@
         border-width: 2px;
         overflow: hidden;
         max-width: 45vw;
-        height: 20vh;
-        max-height: 25vh;
+        height: 40vh;
+        max-height: 20vh;
         background-color: #a06c2d;
     }
     
@@ -175,6 +175,9 @@
             grid-template-rows: 2fr 1fr;
             grid-template-columns: 1fr;
         }
+        .card {
+            max-height: 25vh;
+        }
     }
     
     @media screen and (min-width: 1024px) {
@@ -189,6 +192,9 @@
         }
         button {
             min-width: 15vw;
+        }
+        .card {
+            max-height: 34vh;
         }
     }
     
