@@ -56,9 +56,15 @@ function clearCards() {
 }
 
 function flip(el) {
-    if (el.classList.contains("flipped"))
-        el.remove()
-    else
+    if (el.classList.contains("flipped")) {
+        el.animate({
+            'opacity': '90%',
+            'transform': 'translateY(-150px)'
+        }, 200, 'swing')
+        $(el).delay(180).queue(function() { // Wait for 1 second.
+            $(el).remove().dequeue();
+        })
+    } else
         el.classList.add("flipped")
 }
 

@@ -22,6 +22,7 @@
         grid-template-columns: 1fr;
         grid-row-start: 1;
         grid-column-start: 1;
+        grid-column-end: 1;
         gap: 1em;
         justify-items: center;
     }
@@ -42,6 +43,8 @@
         margin: auto;
         border: solid;
         border-radius: 1rem;
+        border-color: #6a4314;
+        border-width: 2px;
         overflow: hidden;
         max-width: 45vw;
         height: 20vh;
@@ -68,42 +71,36 @@
     }
     
     .stack>.card:nth-child(1) {
-        transform: translateY(12px);
-        border-color: #aaa;
+        transform: translateY(18px);
     }
     
     .stack>.card:nth-child(2) {
-        transform: translateY(10px);
-        border-color: #555;
+        transform: translateY(15px);
     }
     
     .stack>.card:nth-child(3) {
-        transform: translateY(8px);
-        border-color: #aaa;
+        transform: translateY(12px);
     }
     
     .stack>.card:nth-child(4) {
-        transform: translateY(6px);
-        border-color: #555;
+        transform: translateY(9px);
     }
     
     .stack>.card:nth-child(5) {
-        transform: translateY(4px);
-        border-color: #aaa;
+        transform: translateY(6px);
     }
     
     .stack>.card:nth-child(6) {
-        transform: translateY(2px);
-        border-color: #555;
+        transform: translateY(3px);
     }
     
     .stack>.card:nth-child(7) {
         transform: translateY(0px);
-        border-color: #aaa;
     }
     
-    .stack>.card:nth-last-child(1) {
-        border-color: #fff;
+    .card.flipped {
+        border-color: #fff !important;
+        border-width: 3px;
     }
     
     button {
