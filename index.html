@@ -6,23 +6,38 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="script.js" defer></script>
 
-<body>
-    <div class="container">
-        <div class="tray">
-            <div class="stack">
-            </div>
-            <div class="stack">
-            </div>
-            <div class="stack">
-            </div>
-            <div class="stack">
-            </div>
-        </div>
+<body></body>
+<div id="settings_box" class="settings hidden">
+    <p>
+        Carte per mazzo:
+        <input type="radio" name="card_number" id="5" value="5" onchange="reset()">
+        <label for="5">5</label>
+        <input type="radio" name="card_number" id="7" value="7" checked onchange="reset()">
+        <label for="7">7</label>
+    </p>
+    <!-- <p>
+        <input type="checkbox" name="card_variable" id="card_variable" onchange="reset()">
+        <label for="card_variable">Includi carte a valore variabile</label>
+    </p> -->
 
-        <div class="buttons">
-            <button id="reset" onclick="reset()">Reset</button>
+</div>
+<label id="input_label" for="settings-toggle" onclick="toggle_settings(this)"><i class="mdi">settings</i></label>
+<div class="container">
+    <div class="tray">
+        <div class="stack">
+        </div>
+        <div class="stack">
+        </div>
+        <div class="stack">
+        </div>
+        <div class="stack">
         </div>
     </div>
+
+    <div class="buttons">
+        <button id="reset" onclick="resetButton()">Reset</button>
+    </div>
+</div>
 </body>
 
 </html>

@@ -8,14 +8,27 @@ var cards = [
     []
 ]
 
+var num_cards = 7;
+
 $(document).ready(function() {
     for (var i = 0; i < 28; i++) {
         images[i] = new Image();
         images[i].src = "img/" + i + ".jpg";
     }
+    /*
+    for (var i=0; i<10; i++){
+        images[27+i] = new Image();
+        images[27+i].src = "img/var_" + i + ".jpg";
+    }
+    */
     reset()
 });
 
+function toggle_settings() {
+    Array.from(document.querySelectorAll('.settings')).forEach(function(el) {
+        el.classList.toggle("hidden");
+    });
+}
 
 function shuffle(array) {
     let currentIndex = array.length,
@@ -38,13 +51,15 @@ function shuffle(array) {
 }
 
 function generate_arrays() {
+    num_cards = $("input[type='radio'][name='card_number']:checked").val();
     var N = 28;
+    // if ($("#card_variable").is(":checked")) N = 38;
     all_cards = Array.apply(null, { length: N }).map(Number.call, Number);
     shuffle(all_cards);
-    cards[0] = all_cards.slice(0, 7);
-    cards[1] = all_cards.slice(7, 14);
-    cards[2] = all_cards.slice(14, 21);
-    cards[3] = all_cards.slice(21, 28);
+    cards[0] = all_cards.slice(0, num_cards);
+    cards[1] = all_cards.slice(num_cards, num_cards * 2);
+    cards[2] = all_cards.slice(num_cards * 2, num_cards * 3);
+    cards[3] = all_cards.slice(num_cards * 3, num_cards * 4);
 }
 
 function clearCards() {
@@ -56,6 +71,7 @@ function clearCards() {
 }
 
 function flip(el) {
+    $("#settings_box").addClass("hidden")
     if (el.classList.contains("flipped")) {
         el.animate({
             'opacity': '90%',
@@ -93,4 +109,9 @@ function reset() {
     generate_arrays()
     drawCards()
     flipAllLast()
+}
+
+function resetButton() {
+    $("#settings_box").addClass("hidden")
+    reset()
 }
