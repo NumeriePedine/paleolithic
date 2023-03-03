@@ -15,12 +15,13 @@ $(document).ready(function() {
         images[i] = new Image();
         images[i].src = "img/" + i + ".jpg";
     }
-    /*
-    for (var i=0; i<10; i++){
-        images[27+i] = new Image();
-        images[27+i].src = "img/var_" + i + ".jpg";
+
+    for (var i = 0; i < 12; i++) {
+        images[28 + i] = new Image();
+        images[28 + i].src = "img/var_" + i + ".jpg";
     }
-    */
+
+
     reset()
 });
 
@@ -53,7 +54,7 @@ function shuffle(array) {
 function generate_arrays() {
     num_cards = $("input[type='radio'][name='card_number']:checked").val();
     var N = 28;
-    // if ($("#card_variable").is(":checked")) N = 38;
+    if ($("#card_variable").is(":checked")) N = 40;
     all_cards = Array.apply(null, { length: N }).map(Number.call, Number);
     shuffle(all_cards);
     cards[0] = all_cards.slice(0, num_cards);
